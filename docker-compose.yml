@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  database: 
+    image: postgres
+    container_name: database_ignite
+    restart: always
+    ports: 
+      - 5432:5432
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=superprice
+    volumes:
+      - ./data/:/var/lib/postgresql/data/
+
+  
+  redis:
+    image: redis:alpine
+    ports: 
+      - 6379:6379
