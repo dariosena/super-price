@@ -1,2 +1,2 @@
 # super-price
-Super Price project to Rocketseat Hackthon.
+Super Price project for Rocketseat Hackthon.
