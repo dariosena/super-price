@@ -7,8 +7,8 @@ import {
 } from "typeorm";
 import { v4 as uuidV4 } from "uuid";
 
-@Entity("products")
-export class Product {
+@Entity("supermarkets")
+export class Supermarket {
     @PrimaryColumn()
     id: string;
 
@@ -16,10 +16,7 @@ export class Product {
     name: string;
 
     @Column()
-    barcode: string;
-
-    @Column()
-    price: number;
+    city: string;
 
     @CreateDateColumn()
     created_at: Date;

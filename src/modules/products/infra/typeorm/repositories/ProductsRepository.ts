@@ -1,25 +1,31 @@
-import { getRepository, Repository } from 'typeorm';
+import { getRepository, Repository } from "typeorm";
 
-import { IProductsRepository } from '@modules/products/repositories/IProductsRepository';
-import { Product } from '../entities/Product';
+import { IProductsRepository } from "@modules/products/repositories/IProductsRepository";
 
-import { ICreateProductDTO } from '../../dtos/ICreateProductDTO';
+import { ICreateProductDTO } from "../../dtos/ICreateProductDTO";
+import { Product } from "../entities/Product";
 
 export class ProductsRepository implements IProductsRepository {
-  private repository: Repository<Product>;
+    private repository: Repository<Product>;
 
-  constructor() {
-    this.repository = getRepository(Product);
-  }
+    constructor() {
+        this.repository = getRepository(Product);
+    }
 
-  async create({ name, description }: ICreateProductDTO): Promise<Product> {
-    const car = this.repository.create({
-      name,
-      description,
-    });
+    async create({ name, barcode }: ICreateProductDTO): Promise<Product> {
+        const product = this.repository.create({
+            name,
+            barcode,
+        });
 
-    await this.repository.save(car);
+        await this.repository.save(product);
 
-    return car;
-  }
+        return product;
+    }
+
+    async findProduct(barcode: string): Promise<Product> {
+        const product = this.repository.findOne({ barcode });
+
+        return product;
+    }
 }

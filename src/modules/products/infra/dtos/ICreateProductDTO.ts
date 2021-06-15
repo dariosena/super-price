@@ -1,5 +1,5 @@
 export interface ICreateProductDTO {
-  name: string;
-  description: string;
-  id?: string;
+    name: string;
+    barcode: string;
+    id?: string;
 }

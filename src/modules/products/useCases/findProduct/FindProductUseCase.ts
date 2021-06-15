@@ -4,25 +4,21 @@ import { Product } from "@modules/products/infra/typeorm/entities/Product";
 import { IProductsRepository } from "@modules/products/repositories/IProductsRepository";
 
 interface IRequest {
-    name: string;
     barcode: string;
 }
 
 @injectable()
-class CreateProductUseCase {
+class FindProductUseCase {
     constructor(
         @inject("ProductsRepository")
         private productRepository: IProductsRepository
     ) {}
 
-    async execute({ name, barcode }: IRequest): Promise<Product> {
-        const product = await this.productRepository.create({
-            name,
-            barcode,
-        });
+    async execute({ barcode }: IRequest): Promise<Product> {
+        const product = await this.productRepository.findProduct(barcode);
 
         return product;
     }
 }
 
-export { CreateProductUseCase };
+export { FindProductUseCase };

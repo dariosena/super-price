@@ -1,11 +1,12 @@
-import express from 'express';
-import createConnection from '@shared/infra/typeorm';
-import cors from 'cors';
-import 'dotenv/config';
+import cors from "cors";
+import express from "express";
 
-import '@shared/container';
+import createConnection from "@shared/infra/typeorm";
+import "dotenv/config";
 
-import { router } from './routes';
+import "@shared/container";
+
+import { router } from "./routes";
 
 createConnection();
 const app = express();
