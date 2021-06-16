@@ -3,9 +3,9 @@ import { container } from "tsyringe";
 
 import { FindProductUseCase } from "./FindProductUseCase";
 
-export class findProductController {
+export class FindProductController {
     async handle(request: Request, response: Response): Promise<Response> {
-        const { barcode } = request.body;
+        const { barcode } = request.params;
 
         const findProductUseCase = container.resolve(FindProductUseCase);
 
@@ -13,6 +13,6 @@ export class findProductController {
             barcode,
         });
 
-        return response.status(201).json(product);
+        return response.json(product);
     }
 }

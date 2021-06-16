@@ -5,7 +5,7 @@ import { ISupermarketsRepository } from "@modules/supermarket/repositories/ISupe
 import { ICreateSupermarketsDTO } from "../../dtos/ICreateSupermarketsDTO";
 import { Supermarket } from "../entities/Supermarket";
 
-export class SupermarketsReporitory implements ISupermarketsRepository {
+export class SupermarketsRepository implements ISupermarketsRepository {
     private repository: Repository<Supermarket>;
 
     constructor() {

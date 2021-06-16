@@ -16,17 +16,12 @@ export class CreateProduct1623704034221 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "codebar",
-                        type: "varchar",
-                    },
-                    {
                         name: "price",
                         type: "numeric",
                     },
                     {
-                        name: "supermarket_id",
+                        name: "barcode",
                         type: "varchar",
-                        isNullable: true,
                     },
                     {
                         name: "created_at",
@@ -37,15 +32,6 @@ export class CreateProduct1623704034221 implements MigrationInterface {
                         name: "updated_at",
                         type: "timestamp",
                         default: "now()",
-                    },
-                ],
-                foreignKeys: [
-                    {
-                        name: "FKSupermarketProduct",
-                        referencedTableName: "supermarkets",
-                        referencedColumnNames: ["id"],
-                        columnNames: ["supermarket_id"],
-                        onDelete: "SET_NULL",
                     },
                 ],
             })

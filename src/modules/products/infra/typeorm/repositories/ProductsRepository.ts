@@ -12,9 +12,14 @@ export class ProductsRepository implements IProductsRepository {
         this.repository = getRepository(Product);
     }
 
-    async create({ name, barcode }: ICreateProductDTO): Promise<Product> {
+    async create({
+        name,
+        price,
+        barcode,
+    }: ICreateProductDTO): Promise<Product> {
         const product = this.repository.create({
             name,
+            price,
             barcode,
         });
 

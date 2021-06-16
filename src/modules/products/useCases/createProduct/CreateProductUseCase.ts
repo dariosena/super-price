@@ -5,6 +5,7 @@ import { IProductsRepository } from "@modules/products/repositories/IProductsRep
 
 interface IRequest {
     name: string;
+    price: number;
     barcode: string;
 }
 
@@ -15,9 +16,10 @@ class CreateProductUseCase {
         private productRepository: IProductsRepository
     ) {}
 
-    async execute({ name, barcode }: IRequest): Promise<Product> {
+    async execute({ name, price, barcode }: IRequest): Promise<Product> {
         const product = await this.productRepository.create({
             name,
+            price,
             barcode,
         });
 
