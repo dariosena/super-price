@@ -22,4 +22,10 @@ export class SupermarketsRepository implements ISupermarketsRepository {
 
         return supermarket;
     }
+
+    async find(name: string): Promise<Supermarket> {
+        const supermarket = this.repository.findOne({ name });
+
+        return supermarket;
+    }
 }
