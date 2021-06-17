@@ -3,7 +3,7 @@ import { Router } from "express";
 import { CreateSupermarketController } from "@modules/supermarket/useCases/createSupermarket/CreateSupermarketController";
 import { FindSupermarketController } from "@modules/supermarket/useCases/findSupermarket/FindSupermarketController";
 
-import { ensureAuthenticated } from "../../../../../middlewares/EnsureAuthenticated";
+import { ensureAuthenticated } from "../../../../middlewares/EnsureAuthenticated";
 
 const supermarketsRoutes = Router();
 

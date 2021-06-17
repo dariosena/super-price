@@ -3,7 +3,7 @@ import { Router } from "express";
 import { CreateProductController } from "@modules/products/useCases/createProduct/CreateProductController";
 import { FindProductController } from "@modules/products/useCases/findProduct/FindProductController";
 
-import { ensureAuthenticated } from "../../../../../middlewares/EnsureAuthenticated";
+import { ensureAuthenticated } from "../../../../middlewares/EnsureAuthenticated";
 
 const productsRoutes = Router();
 
