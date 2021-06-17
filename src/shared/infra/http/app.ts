@@ -29,6 +29,7 @@ app.use(
             status: "error",
             message: `internal server error = ${err.message}`,
         });
+        next();
     }
 );
 
